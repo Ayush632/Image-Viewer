@@ -6,7 +6,7 @@ fs.readdir("\images",function(err,data){
     if (err){
         return console.error(err);
     }
-    var regxTest=new RegExp('.+/.'+process.argv[3]+'$');
+    var regxTest=new RegExp('.+/.'+.JPG+'$');
     data.filter(function(elem){
         return regxTest.test(elem);
     });
