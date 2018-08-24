@@ -7,8 +7,7 @@ let mainWindow
 function createWindow () {
   
   mainWindow = new BrowserWindow({width: 800, height: 600})
-
- 
+  mainWindow.webContents.openDevTools()
   mainWindow.loadFile('index.html')
   const mainMenu=Menu.buildFromTemplate(mainMenuTemplate);
   Menu.setApplicationMenu(mainMenu);
