@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <title>IMAGE VIEWER</title>
   </head>
-  <body>
+  <body style="display:flex; flex-direction: column">
     <h1>JATAYU</h1>
-    <script type="text/javascript"src="getImage.js"></script>
-    
-    <img src = "images/hi.JPG" id="mainImage" alt="ERROR" width="500" height="333">
-    
-    <form action="http://127.0.0.1:5000/ " method="post">
-      <label for="shape">shape: </label>
-      <input id="shape" type="text" name="shape" value="shape">
-      <input type="submit" value="OK">
-    </form>
-    <button onclick="changeImage()">next</button>
-
-    <script type="text/javascript" >
-      var myImage=document.getElementById('mainImage');     
+    <div style="display:flex; flex-direction: row">
+      <div style="display:flex; flex-direction: column">
+        <img src = "images/hi.JPG" id="mainImage" alt="ERROR" width="500" height="333">
+        <button style="width:100%" onclick="changeImage()">next</button>
+      </div>
+      <div style="display:flex; flex-direction: column"
+          <form action="http://127.0.0.1:5000/ " method="post">
+            <label for="shape">shape: </label>
+            <input id="shape" type="text" name="shape" value="shape">
+            <input type="submit" value="OK">
+          </form>
+      </div>
+    </div> 
+    <script type="text/javascript"src="js/getImage.js"></script>
+    <script type="text/javascript"src="js/materialize.js"></script>
+    <script type="text/javascript" >var myImage=document.getElementById('mainImage');     
       var imageIndex=1;
       function changeImage(){
         myImage.setAttribute("src","images/"+imageArray[imageIndex]);
         imageIndex++;
-      }
-    </script>   
+      }</script>    
   </body>
 </html>
