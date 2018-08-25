@@ -8,7 +8,7 @@
     <h1>JATAYU</h1>
     <script type="text/javascript"src="getImage.js"></script>
     
-    <img src = "images/hi" id="mainImage" alt="ERROR" width="500" height="333">
+    <img src = "images/hi.JPG" id="mainImage" alt="ERROR" width="500" height="333">
     
     <form action="http://127.0.0.1:5000/ " method="post">
       <label for="shape">shape: </label>
@@ -18,8 +18,8 @@
     <button onclick="changeImage()">next</button>
 
     <script type="text/javascript" >
-      //var myImage=document.getElementById('mainImage');     
-      //var imageIndex=1;
+      var myImage=document.getElementById('mainImage');     
+      var imageIndex=1;
       function changeImage(){
         myImage.setAttribute("src","images/"+imageArray[imageIndex]);
         imageIndex++;
