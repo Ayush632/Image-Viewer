@@ -21,11 +21,48 @@
     </div> 
     <script type="text/javascript"src="js/getImage.js"></script>
     <script type="text/javascript"src="js/materialize.js"></script>
-    <script type="text/javascript" >var myImage=document.getElementById('mainImage');     
-      var imageIndex=1;
-      function changeImage(){
+    <button onclick="deleteImage()">delete</button>
+  <script type="text/javascript">
+  //var fs = require('fs');
+ 
+ 
+ //fs.unlink('images/imageArray[i]', function (err) {
+    // if (err) throw err;
+     
+     //console.log('File deleted!');
+ //});  </script>
+    <button onclick="previousImage()">previous</button>
+    <script type="text/javascript" >
+      var fs=require('fs');
+      var myImage=document.getElementById('mainImage');     
+      var imageIndex=0;
+       function previousImage(){
+        goto_label='end';
+        if(imageIndex==1)
+         goto_label:end;
+        imageIndex--;
+        imageIndex--;
         myImage.setAttribute("src","images/"+imageArray[imageIndex]);
         imageIndex++;
+      }
+      function changeImage(){
+        goto_label='start';
+       //goto_loop:if((imageIndex+1)==imageArray.length)
+        //continue goto_loop;
+        
+        if((imageIndex)==imageArray.length)
+         goto_label:start;
+        myImage.setAttribute("src","images/"+imageArray[imageIndex]);
+        imageIndex++;
+      }
+         function deleteImage(){
+        imageIndex--;
+        fs.unlink('images/'+imageArray[imageIndex],function(err){
+          if(err) throw err;
+          imageIndex++;
+          imageIndex++;
+          console.log('deleted');
+        });
       }</script>    
   </body>
 </html>
